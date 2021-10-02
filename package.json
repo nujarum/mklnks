@@ -6,6 +6,7 @@
     "name": "nujarum",
     "url": "https://github.com/nujarum"
   },
+  "bin": "./bin/cli.mjs",
   "bugs": {
     "url": "https://github.com/nujarum/mklnks/issues"
   },
@@ -32,15 +33,42 @@
   "engines": {
     "node": ">=14"
   },
+  "exports": {
+    ".": "./dist/main.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "types"
+  ],
   "homepage": "https://github.com/nujarum/mklnks#readme",
+  "imports": {
+    "#@": "./package.json",
+    "#*": "./dist/*.mjs"
+  },
   "keywords": [
-    "mklnks"
+    "hard link",
+    "import.meta.resolve",
+    "junction",
+    "link",
+    "require.resolve",
+    "symbolic link",
+    "symlink"
   ],
   "license": "MIT",
-  "main": "index.mjs",
+  "main": "./dist/main.mjs",
+  "module": "./dist/main.mjs",
   "repository": "github:nujarum/mklnks",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "clean": "rimraf .cache bin dist test/.tmp types",
+    "clear": "rimraf node_modules",
+    "jest": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
+    "lint": "eslint . --cache --cache-file .cache/.eslintcache",
+    "preinstall": "npx only-allow pnpm",
+    "test": "concurrently npm:jest npm:lint"
   },
-  "type": "module"
+  "type": "module",
+  "types": "./types/main.d.ts"
 }
