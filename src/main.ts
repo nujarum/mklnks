@@ -52,7 +52,7 @@ export interface WorkerData {
 export interface LinkInfo {
     /** `true` if run with `Options.dryRun: true` */
     readonly dryRun?: boolean;
-    /** `true` if any link has created. `false` if otherwise (e.g. `targetPath` & `linkPath` refer to same location). */
+    /** `true` if any link has created. `false` if otherwise (e.g. `linkPath` & `targetPath` refer to same location). */
     readonly isAnyLink: boolean;
     /** `true` if the link created is directory link. */
     readonly isDirLink: boolean;
