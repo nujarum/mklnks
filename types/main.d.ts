@@ -11,9 +11,9 @@ interface LinkInfo {
     readonly isHardLink: boolean;
     /** `true` if the link created is junction. */
     readonly isJunction: boolean;
-    /** `true` if the link created is soft-link (junction or symbolic link). */
+    /** `true` if the link created is soft-link (junction or symlink). */
     readonly isSoftLink: boolean;
-    /** `true` if the link created is symbolic link. */
+    /** `true` if the link created is symlink. */
     readonly isSymLink: boolean;
     /** The path of link source. */
     readonly linkPath: string;
@@ -49,7 +49,9 @@ interface Options {
      */
     force?: boolean;
     /**
-     * (**On Windows only**) Create links with junctions/hard-links instead of symbolic links.
+     * **(Windows only)**
+     *
+     * Create links with junctions/hard-links instead of symlinks.
      * @default false
      */
     noSymlink?: boolean;

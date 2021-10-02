@@ -10,10 +10,11 @@ import { Worker } from 'worker_threads';
 import chalk from 'chalk';
 import workerURL from '#worker'; // await import.meta.resolve('#worker');
 
-const _symlinkAvailable = availableSymlink();
+const isWindows = process.platform === 'win32';
+const symlinkAvailable = availableSymlink();
+
 const { gray } = chalk;
 const cpuCount = cpus().length;
-const isWindows = process.platform === 'win32';
 const workerPath = fileURLToPath(workerURL);
 
 /** @internal */
@@ -61,9 +62,9 @@ export interface LinkInfo {
     readonly isHardLink: boolean;
     /** `true` if the link created is junction. */
     readonly isJunction: boolean;
-    /** `true` if the link created is soft-link (junction or symbolic link). */
+    /** `true` if the link created is soft-link (junction or symlink). */
     readonly isSoftLink: boolean;
-    /** `true` if the link created is symbolic link. */
+    /** `true` if the link created is symlink. */
     readonly isSymLink: boolean;
     /** The path of link source. */
     readonly linkPath: string;
@@ -100,7 +101,9 @@ export interface Options {
      */
     force?: boolean;
     /**
-     * (**On Windows only**) Create links with junctions/hard-links instead of symbolic links.
+     * **(Windows only)**
+     *
+     * Create links with junctions/hard-links instead of symlinks.
      * @default false
      */
     noSymlink?: boolean;
@@ -135,7 +138,7 @@ interface _LinkInfo extends Readonly<LinkInfoInit> { // eslint-disable-line @typ
 }
 
 export function isSymlinkAvailable() {
-    return _symlinkAvailable;
+    return symlinkAvailable;
 }
 
 export async function mklnks(options: Options) {
@@ -165,7 +168,7 @@ export async function mklnks(options: Options) {
         }
         {
             const n = workers.length = Math.min(cpuCount, size);
-            const preferSymlink = !noSymlink && await _symlinkAvailable;
+            const preferSymlink = !noSymlink && await symlinkAvailable;
             const workerData: WorkerData = { dryRun, force, preferSymlink, quiet, silent };
             const workerOptions: WorkerOptions = {
                 execArgv: ['--experimental-import-meta-resolve'],
@@ -188,6 +191,9 @@ export async function mklnks(options: Options) {
 }
 
 async function availableSymlink() {
+    if (!isWindows) {
+        return true;
+    }
     const rmOptions: RmOptions = { force: true, recursive: true };
     const tmpPath = join(tmpdir(), Date.now().toString(36));
     try {
