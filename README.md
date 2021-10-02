@@ -2,6 +2,12 @@
 
 Create links as configured.
 
+[![code size](https://img.shields.io/github/languages/code-size/nujarum/mklnks)](/README.md)
+[![dependencies](https://img.shields.io/david/nujarum/mklnks)](/README.md)
+[![license](https://img.shields.io/github/license/nujarum/mklnks)](/LICENSE)
+[![node](https://img.shields.io/node/v/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
+[![Open in VSCode](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/nujarum/mklnks)
+
 - [API](#api)
   - [`Options`](#options)
     - [`baseDir`](#basedir)
@@ -82,18 +88,18 @@ Create links with junctions/hard-links instead of symblinks.
 
 `LinkInfo` has the following properties.
 
-| Name         | Type      | Description                                                                                                   |
-| ------------ | --------- | ------------------------------------------------------------------------------------------------------------- |
-| `dryRun`     | `boolean` | `true` if run with `Options.dryRun: true`                                                                     |
-| `isAnyLink`  | `boolean` | `true` if any link has created. `false` if otherwise (e.g. `targetPath` & `linkPath` refer to same location). |
-| `isDirLink`  | `boolean` | `true` if the link created is directory link.                                                                 |
-| `isFileLink` | `boolean` | `true` if the link created is file link.                                                                      |
-| `isHardLink` | `boolean` | `true` if the link created is hard-link.                                                                      |
-| `isJunction` | `boolean` | `true` if the link created is junction.                                                                       |
-| `isSoftLink` | `boolean` | `true` if the link created is soft-link (junction or symlink).                                                |
-| `isSymLink`  | `boolean` | `true` if the link created is symlink.                                                                        |
-| `linkPath`   | `string`  | The path of link source.                                                                                      |
-| `targetPath` | `string`  | The path of link tareget.                                                                                     |
+| Name         | Type      | Description                                                                                                       |
+| ------------ | --------- | ----------------------------------------------------------------------------------------------------------------- |
+| `dryRun`     | `boolean` | `true` if run with `Options.dryRun: true`                                                                         |
+| `isAnyLink`  | `boolean` | `true` if any link has created. `false` if otherwise<br/>(e.g. `linkPath` & `targetPath` refer to same location). |
+| `isDirLink`  | `boolean` | `true` if the link created is directory link.                                                                     |
+| `isFileLink` | `boolean` | `true` if the link created is file link.                                                                          |
+| `isHardLink` | `boolean` | `true` if the link created is hard-link.                                                                          |
+| `isJunction` | `boolean` | `true` if the link created is junction.                                                                           |
+| `isSoftLink` | `boolean` | `true` if the link created is soft-link (junction or symlink).                                                    |
+| `isSymLink`  | `boolean` | `true` if the link created is symlink.                                                                            |
+| `linkPath`   | `string`  | The path of link source.                                                                                          |
+| `targetPath` | `string`  | The path of link tareget.                                                                                         |
 
 
 # CLI
