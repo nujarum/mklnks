@@ -1,0 +1,25 @@
+{
+  "name": "@nujarum/mklnks",
+  "description": "Create links as configured.",
+  "version": "0.0.1",
+  "author": {
+    "name": "nujarum",
+    "url": "https://github.com/nujarum"
+  },
+  "bugs": {
+    "url": "https://github.com/nujarum/mklnks/issues"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "homepage": "https://github.com/nujarum/mklnks#readme",
+  "keywords": [
+    "mklnks"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "github:nujarum/mklnks",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
