@@ -45,7 +45,7 @@ async function mklnk(linkPath: string, target: string) {
         stat(targetPath).catch(noop),
     ] as Promise<Stats | undefined>[];
 
-    const definitelyDir = target.endsWith('/');
+    const definitelyDir = /[/\\]$/.test(target);
     const linkParentDirPath = dirname(linkPath);
     const preparations = [] as Promise<unknown>[];
     const strLink = toPOSIX(linkPath);
@@ -113,7 +113,7 @@ async function mklnk(linkPath: string, target: string) {
 
 function noop() { /* NOOP */ }
 
-const cwd = process.cwd() + '/';
+const cwd = process.cwd() + sep;
 const cwdUrl = pathToFileURL(cwd).href;
 const require = createRequire(cwd);
 

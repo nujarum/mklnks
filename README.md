@@ -2,10 +2,11 @@
 
 Create links as configured.
 
-[![code size](https://img.shields.io/github/languages/code-size/nujarum/mklnks)](/README.md)
-[![dependencies](https://img.shields.io/david/nujarum/mklnks)](/README.md)
+[![npm](https://img.shields.io/npm/v/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
+[![code size](https://img.shields.io/github/languages/code-size/nujarum/mklnks)](/../../)
 [![license](https://img.shields.io/github/license/nujarum/mklnks)](/LICENSE)
-[![node](https://img.shields.io/node/v/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
+[![node](https://img.shields.io/node/v/@nujarum/mklnks)](https://nodejs.org/)
+[![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](/../../network/dependencies)
 [![Open in VSCode](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/nujarum/mklnks)
 
 - [API](#api)
@@ -61,7 +62,7 @@ Force to remove existing files/directories in the link path.
 * Default: `false`
 
 ### `noSymlink` **(Windows only)**
-Create links with junctions/hard-links instead of symblinks.
+Create links with junctions/hard-links instead of symlinks.
 * Type: `boolean`
 * Default: `false`
 
