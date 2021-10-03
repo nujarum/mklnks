@@ -125,7 +125,7 @@ class _LinkInfo implements LinkInfo {
         Object.values(properties).forEach(p => p.writable = false);
         Object.defineProperties(this, properties);
     }
-    get [Symbol.toStringTag]() { return 'LinkInfo' as const }
+    get [Symbol.toStringTag]() { return 'LinkInfo' as const; }
     get isAnyLink()     { return LinkType.NONE < this.type; }
     get isDirLink()     { return !!(this.type & LinkType.DIR_LINK); }
     get isFileLink()    { return !!(this.type & LinkType.FILE_LINK); }
