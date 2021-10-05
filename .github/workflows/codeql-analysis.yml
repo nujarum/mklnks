@@ -13,17 +13,16 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ main ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
+    paths:
+    - src/**/*.ts
+    - test/**/*.ts
   workflow_dispatch:
-    branches: [ main ]
-
-
-paths:
-  - src/**/*.ts
-  - test/**/*.ts
+    paths:
+    - src/**/*.ts
+    - test/**/*.ts
 
 jobs:
   analyze:
