@@ -3,10 +3,11 @@
 Create links as configured.
 
 [![npm](https://img.shields.io/npm/v/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
-[![code size](https://img.shields.io/github/languages/code-size/nujarum/mklnks)](/../../)
-[![license](https://img.shields.io/github/license/nujarum/mklnks)](/LICENSE)
+[![code size](https://img.shields.io/github/languages/code-size/nujarum/mklnks)](https://github.com/nujarum/mklnks/)
+[![license](https://img.shields.io/github/license/nujarum/mklnks)](https://github.com/nujarum/mklnks/LICENSE)
 [![node](https://img.shields.io/node/v/@nujarum/mklnks)](https://nodejs.org/)
-[![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](/../../network/dependencies)
+[![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](https://github.com/nujarum/mklnks/network/dependencies)
+[![CodeQL](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml)
 [![Open in VSCode](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/nujarum/mklnks)
 
 - [API](#api)
