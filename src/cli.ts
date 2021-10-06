@@ -9,7 +9,8 @@ import { isSymlinkAvailable, mklnks } from '#main';
 
 const { gray, red } = chalk;
 const require = createRequire(import.meta.url);
-const { name, version } = require('#@') as typeof import('#@');
+const { bin, version } = require('#@') as typeof import('#@');
+const [name] = Object.keys(bin) as ['mklnks'];
 
 const helpText = `
 ${name} v${version}
