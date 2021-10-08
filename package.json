@@ -50,17 +50,25 @@
     "#*": "./dist/*.mjs"
   },
   "keywords": [
+    "cli",
+    "hard",
     "hard link",
+    "hardlink",
     "import.meta.resolve",
     "junction",
     "link",
+    "package.json",
     "require.resolve",
+    "symbolic",
     "symbolic link",
     "symlink"
   ],
   "license": "MIT",
   "main": "./dist/main.mjs",
   "module": "./dist/main.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": "github:nujarum/mklnks",
   "scripts": {
     "build": "rollup -c",
@@ -68,7 +76,6 @@
     "clear": "rimraf node_modules",
     "jest": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
     "lint": "eslint . --cache --cache-file .cache/.eslintcache",
-    "preinstall": "npx only-allow pnpm",
     "test": "concurrently npm:jest npm:lint"
   },
   "type": "module",
