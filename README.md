@@ -4,7 +4,7 @@ Create links as configured.
 
 [![npm](https://img.shields.io/npm/v/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
 [![code size](https://img.shields.io/github/languages/code-size/nujarum/mklnks)](https://github.com/nujarum/mklnks/)
-[![license](https://img.shields.io/github/license/nujarum/mklnks)](https://github.com/nujarum/mklnks/LICENSE)
+[![license](https://img.shields.io/github/license/nujarum/mklnks)](https://github.com/nujarum/mklnks/blob/main/LICENSE)
 [![node](https://img.shields.io/node/v/@nujarum/mklnks)](https://nodejs.org/)
 [![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](https://github.com/nujarum/mklnks/network/dependencies)
 [![CodeQL](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml)
@@ -29,7 +29,7 @@ Create links as configured.
 
 # API
 
-See also [`main.d.ts`](types/main.d.ts).
+See also [`main.d.ts`](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts).
 
 ```ts
 declare function mklnks(options: Options): Promise<LinkInfo[]>;

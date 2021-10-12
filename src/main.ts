@@ -7,15 +7,19 @@ import { cpus, tmpdir } from 'os';
 import { join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { Worker } from 'worker_threads';
+import { importMetaResolve } from '@nujarum/resolve-esm';
 import chalk from 'chalk';
-import workerURL from '#worker'; // await import.meta.resolve('#worker');
+const { gray } = chalk;
 
+const getWorkerUrl = importMetaResolve('#worker', import.meta.url); // import.meta.resolve('#worker');
 const isWindows = process.platform === 'win32';
 const symlinkAvailable = availableSymlink();
 
-const { gray } = chalk;
 const cpuCount = cpus().length;
-const workerPath = fileURLToPath(workerURL);
+const execArgv = Object.freeze([
+    '--experimental-import-meta-resolve',
+]) as string[];
+const workerPath = fileURLToPath(await getWorkerUrl);
 
 /** @internal */
 export interface LinkInfoInit {
@@ -170,10 +174,7 @@ export async function mklnks(options: Options) {
             const n = workers.length = Math.min(cpuCount, size);
             const preferSymlink = !noSymlink && await symlinkAvailable;
             const workerData: WorkerData = { dryRun, force, preferSymlink, quiet, silent };
-            const workerOptions: WorkerOptions = {
-                execArgv: ['--experimental-import-meta-resolve'],
-                workerData,
-            };
+            const workerOptions: WorkerOptions = { execArgv, workerData };
             for (let i = 0; i < n; workers[i++] = new Worker(workerPath, workerOptions));
         }
         const entryList: (readonly [string, string])[] = [...entryMap];
