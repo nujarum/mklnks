@@ -23,8 +23,6 @@ parentPort?.on('message', async (message: readonly [string, string]) => {
     parentPort!.postMessage(result);
 });
 
-export default import.meta.url;
-
 async function mklnk(linkPath: string, target: string) {
 
     if (!linkPath || !target) {
