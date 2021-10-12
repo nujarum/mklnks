@@ -5,7 +5,10 @@
     // "declaration": true,
     // "declarationDir": "./types",
     // "declarationMap": true,
-    // "outDir": "dist",
+    "lib": [
+      "ESNext"
+    ],
+    // "outDir": "./dist",
     "paths": {
       "#@": ["./package.json"],
       "#*": ["./src/*.ts"],
@@ -14,6 +17,9 @@
     "tsBuildInfoFile": ".cache/tsconfig.tsbuildinfo",
     "typeRoots": [
       "./node_modules/@types",
+    ],
+    "types": [
+      "node",
     ],
   },
 }
