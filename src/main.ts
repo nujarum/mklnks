@@ -11,7 +11,7 @@ import { importMetaResolve } from '@nujarum/resolve-esm';
 import chalk from 'chalk';
 const { gray } = chalk;
 
-const getWorkerUrl = importMetaResolve('#worker', import.meta.url); // import.meta.resolve('#worker');
+const getWorkerUrl = importMetaResolve('#worker'); // import.meta.resolve('#worker');
 const isWindows = process.platform === 'win32';
 const symlinkAvailable = availableSymlink();
 
