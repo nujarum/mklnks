@@ -7,7 +7,7 @@ Create links as configured.
 [![install size](https://packagephobia.com/badge?p=@nujarum/mklnks)](https://packagephobia.com/result?p=@nujarum/mklnks)
 [![license](https://badgen.net/npm/license/@nujarum/mklnks)](https://github.com/nujarum/mklnks/blob/main/LICENSE)
 [![node](https://badgen.net/npm/node/@nujarum/mklnks)](https://nodejs.org/)
-[![types](https://badgen.net/npm/types/@nujarum/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/index.d.ts)
+[![types](https://badgen.net/npm/types/@nujarum/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts)
 [![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](https://github.com/nujarum/mklnks/network/dependencies)
 [![CodeQL](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml)
 [![Open in VSCode](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/nujarum/mklnks)
