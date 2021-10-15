@@ -18,7 +18,7 @@ const symlinkAvailable = availableSymlink();
 const cpuCount = cpus().length;
 const execArgv = Object.freeze([
     '--experimental-import-meta-resolve',
-]) as string[];
+]);
 const workerPath = fileURLToPath(await getWorkerUrl);
 
 /** @internal */
@@ -174,7 +174,7 @@ export async function mklnks(options: Options) {
             const n = workers.length = Math.min(cpuCount, size);
             const preferSymlink = !noSymlink && await symlinkAvailable;
             const workerData: WorkerData = { dryRun, force, preferSymlink, quiet, silent };
-            const workerOptions: WorkerOptions = { execArgv, workerData };
+            const workerOptions = { execArgv, workerData } as WorkerOptions;
             for (let i = 0; i < n; workers[i++] = new Worker(workerPath, workerOptions));
         }
         const entryList: (readonly [string, string])[] = [...entryMap];
