@@ -1,7 +1,7 @@
 {
-  "name": "@nujarum/mklnks",
+  "name": "mklnks",
   "description": "Create links as configured.",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": {
     "name": "nujarum",
     "url": "https://github.com/nujarum"
@@ -13,9 +13,9 @@
     "url": "https://github.com/nujarum/mklnks/issues"
   },
   "dependencies": {
-    "@nujarum/resolve-esm": "~1.0.2",
     "chalk": "~4.1.2",
-    "minimist": "~1.2.5"
+    "minimist": "~1.2.5",
+    "resolve-esm": "~1.0.3"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.6",

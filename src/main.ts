@@ -7,7 +7,7 @@ import { cpus, tmpdir } from 'os';
 import { join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { Worker } from 'worker_threads';
-import { importMetaResolve } from '@nujarum/resolve-esm';
+import { importMetaResolve } from 'resolve-esm';
 import chalk from 'chalk';
 const { gray } = chalk;
 
