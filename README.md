@@ -2,12 +2,12 @@
 
 Create links as configured.
 
-[![npm](https://badgen.net/npm/v/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
-[![downloads](https://badgen.net/npm/dt/@nujarum/mklnks)](https://www.npmjs.com/package/@nujarum/mklnks)
-[![install size](https://packagephobia.com/badge?p=@nujarum/mklnks)](https://packagephobia.com/result?p=@nujarum/mklnks)
-[![license](https://badgen.net/npm/license/@nujarum/mklnks)](https://github.com/nujarum/mklnks/blob/main/LICENSE)
-[![node](https://badgen.net/npm/node/@nujarum/mklnks)](https://nodejs.org/)
-[![types](https://badgen.net/npm/types/@nujarum/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts)
+[![npm](https://badgen.net/npm/v/mklnks)](https://www.npmjs.com/package/mklnks)
+[![downloads](https://badgen.net/npm/dt/mklnks)](https://www.npmjs.com/package/mklnks)
+[![install size](https://packagephobia.com/badge?p=mklnks)](https://packagephobia.com/result?p=mklnks)
+[![license](https://badgen.net/npm/license/mklnks)](https://github.com/nujarum/mklnks/blob/main/LICENSE)
+[![node](https://badgen.net/npm/node/mklnks)](https://nodejs.org/)
+[![types](https://badgen.net/npm/types/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts)
 [![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](https://github.com/nujarum/mklnks/network/dependencies)
 [![CodeQL](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml)
 [![Open in VSCode](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/nujarum/mklnks)
