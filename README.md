@@ -7,34 +7,33 @@ Create links as configured.
 [![install size](https://packagephobia.com/badge?p=mklnks)](https://packagephobia.com/result?p=mklnks)
 [![license](https://badgen.net/npm/license/mklnks)](https://github.com/nujarum/mklnks/blob/main/LICENSE)
 [![node](https://badgen.net/npm/node/mklnks)](https://nodejs.org/)
-[![types](https://badgen.net/npm/types/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts)
+[![types](https://badgen.net/npm/types/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.mts)
 [![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](https://github.com/nujarum/mklnks/network/dependencies)
 [![CodeQL](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml)
-[![Open in VSCode](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/nujarum/mklnks)
 
 - [API](#api)
-  - [`Options`](#options)
-    - [`baseDir`](#basedir)
-    - [`dryRun`](#dryrun)
-    - [`entries`](#entries)
-    - [`force`](#force)
-    - [`noSymlink` **(Windows only)**](#nosymlink-windows-only)
-    - [`quiet`](#quiet)
-    - [`silent`](#silent)
-  - [`LinkInfo`](#linkinfo)
+    - [`Options`](#options)
+        - [`baseDir`](#basedir)
+        - [`dryRun`](#dryrun)
+        - [`entries`](#entries)
+        - [`force`](#force)
+        - [`noSymlink` **(Windows only)**](#nosymlink-windows-only)
+        - [`quiet`](#quiet)
+        - [`silent`](#silent)
+    - [`LinkInfo`](#linkinfo)
 - [CLI](#cli)
 - [Configurations](#configurations)
-  - [with current `package.json`](#with-current-packagejson)
-  - [with isolated config file (`*.{json|js|cjs|mjs}`)](#with-isolated-config-file-jsonjscjsmjs)
+    - [with current `package.json`](#with-current-packagejson)
+    - [with isolated config file (`*.{json|js|cjs|mjs}`)](#with-isolated-config-file-jsonjscjsmjs)
 
 -----
 
 # API
 
-See also [`main.d.ts`](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts).
+See also [`main.d.mts`](https://github.com/nujarum/mklnks/blob/main/types/main.d.mts).
 
 ```ts
-declare function mklnks(options: Options): Promise<LinkInfo[]>;
+function mklnks(options: Options): Promise<LinkInfo[]>;
 ```
 
 ## `Options`
@@ -42,7 +41,7 @@ declare function mklnks(options: Options): Promise<LinkInfo[]>;
 ### `baseDir`
 Base path for resolving paths.
 * Type: `string`
-* Default: `'.'` (== [`process.cwd()`](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#process_process_cwd))
+* Default: `'.'` (== [`process.cwd()`](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#processcwd))
 
 ### `dryRun`
 Run trial execution without actual link creation.
@@ -53,11 +52,11 @@ Run trial execution without actual link creation.
 An object mapping link path to target path.
 * Type: `Record<string, string>`
 * Supported link formats:
-  * absolute/relative path
+    * absolute/relative path
 * Supported target formats:
-  * absolute/relative path
-  * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#esm_import_meta_resolve_specifier_parent))
-  * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#modules_require_resolve_request_options))
+    * absolute/relative path
+    * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#importmetaresolvespecifier-parent))
+    * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#requireresolverequest-options))
 
 ### `force`
 Force to remove existing files/directories in the link path.
@@ -79,7 +78,7 @@ Create links with junctions/hard-links instead of symlinks.
 ### `quiet`
 **Not** to display logs.
 * Type: `boolean`
-* Default: `false`
+* Default: The value of `silent`
 
 ### `silent`
 **Not** to display logs & warnings.
