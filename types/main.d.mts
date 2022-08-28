@@ -23,12 +23,12 @@ interface LinkInfo {
 interface Options {
     /**
      * Base path for resolving paths.
-     * @default '.' (== process.cwd())
+     * @defaultValue `"."` (== [`process.cwd()`](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#processcwd))
      */
     baseDir?: string;
     /**
      * Run trial execution without actual link creation.
-     * @default false
+     * @defaultValue `false`
      */
     dryRun?: boolean;
     /**
@@ -39,34 +39,34 @@ interface Options {
      *
      * Supported target formats:
      * * absolute/relative path
-     * * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#esm_import_meta_resolve_specifier_parent))
-     * * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#modules_require_resolve_request_options))
+     * * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#importmetaresolvespecifier-parent))
+     * * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#requireresolverequest-options))
      */
     entries: Record</* link */ string, /* target */ string>;
     /**
      * Force to remove existing files/directories in the link path.
-     * @default false
+     * @defaultValue `false`
      */
     force?: boolean;
     /**
      * **(Windows only)**
      *
      * Create links with junctions/hard-links instead of symlinks.
-     * @default false
+     * @defaultValue `false`
      */
     noSymlink?: boolean;
     /**
      * **Not** to display logs.
-     * @default silent
+     * @defaultValue The value of {@linkcode silent}
      */
     quiet?: boolean;
     /**
      * **Not** to display logs & warnings.
-     * @default false
+     * @defaultValue `false`
      */
     silent?: boolean;
 }
 declare function isSymlinkAvailable(): Promise<boolean>;
 declare function mklnks(options: Options): Promise<LinkInfo[]>;
 export { LinkInfo, Options, isSymlinkAvailable, mklnks };
-//# sourceMappingURL=main.d.ts.map
+//# sourceMappingURL=main.d.mts.map
