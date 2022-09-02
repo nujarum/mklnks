@@ -24,7 +24,7 @@ export default [
         input: 'src/main.ts',
         external,
         output: {
-            file: 'dist/main.mjs',
+            file: 'dist/main.js',
             format: 'es',
             preferConst: true,
             sourcemap: true,
@@ -44,7 +44,7 @@ export default [
         input: 'src/worker.ts',
         external,
         output: {
-            file: 'dist/worker.mjs',
+            file: 'dist/worker.js',
             format: 'es',
             preferConst: true,
             sourcemap: true,
@@ -60,7 +60,7 @@ export default [
         external,
         output: {
             banner: '#!/usr/bin/env node',
-            file: 'bin/cli.mjs',
+            file: 'bin/cli.js',
             format: 'es',
             preferConst: true,
             sourcemap: true,

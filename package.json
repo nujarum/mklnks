@@ -7,7 +7,7 @@
     "url": "https://github.com/nujarum"
   },
   "bin": {
-    "mklnks": "./bin/cli.mjs"
+    "mklnks": "./bin/cli.js"
   },
   "bugs": {
     "url": "https://github.com/nujarum/mklnks/issues"
@@ -42,18 +42,21 @@
     "node": ">=14"
   },
   "exports": {
-    ".": "./dist/main.mjs",
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./types/main.d.ts"
+    },
     "./package.json": "./package.json"
   },
   "files": [
     "bin",
     "dist",
-    "types/**/*.d.mts"
+    "types/**/*.d.ts"
   ],
   "homepage": "https://github.com/nujarum/mklnks#readme",
   "imports": {
     "#@": "./package.json",
-    "#*": "./dist/*.mjs"
+    "#*": "./dist/*.js"
   },
   "keywords": [
     "cli",
@@ -74,8 +77,8 @@
     "symlink"
   ],
   "license": "MIT",
-  "main": "./dist/main.mjs",
-  "module": "./dist/main.mjs",
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
   "publishConfig": {
     "access": "public"
   },
@@ -88,5 +91,5 @@
     "test": "concurrently npm:jest npm:lint"
   },
   "type": "module",
-  "types": "./types/main.d.mts"
+  "types": "./types/main.d.ts"
 }
