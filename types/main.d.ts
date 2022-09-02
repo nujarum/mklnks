@@ -69,4 +69,4 @@ interface Options {
 declare function isSymlinkAvailable(): Promise<boolean>;
 declare function mklnks(options: Options): Promise<LinkInfo[]>;
 export { LinkInfo, Options, isSymlinkAvailable, mklnks };
-//# sourceMappingURL=main.d.mts.map
+//# sourceMappingURL=main.d.ts.map

@@ -7,7 +7,7 @@ Create links as configured.
 [![install size](https://packagephobia.com/badge?p=mklnks)](https://packagephobia.com/result?p=mklnks)
 [![license](https://badgen.net/npm/license/mklnks)](https://github.com/nujarum/mklnks/blob/main/LICENSE)
 [![node](https://badgen.net/npm/node/mklnks)](https://nodejs.org/)
-[![types](https://badgen.net/npm/types/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.mts)
+[![types](https://badgen.net/npm/types/mklnks)](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts)
 [![vulnerabilities](https://snyk.io/test/github/nujarum/mklnks/badge.svg?targetFile=package.json)](https://github.com/nujarum/mklnks/network/dependencies)
 [![CodeQL](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/nujarum/mklnks/actions/workflows/codeql-analysis.yml)
 
@@ -30,7 +30,7 @@ Create links as configured.
 
 # API
 
-See also [`main.d.mts`](https://github.com/nujarum/mklnks/blob/main/types/main.d.mts).
+See also [`main.d.ts`](https://github.com/nujarum/mklnks/blob/main/types/main.d.ts).
 
 ```ts
 function mklnks(options: Options): Promise<LinkInfo[]>;
