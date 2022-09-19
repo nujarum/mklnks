@@ -1,12 +1,11 @@
 /* eslint-disable
     @typescript-eslint/no-floating-promises,
  */
-/// <reference types="jest" />
-
 import type { MakeDirectoryOptions } from 'fs';
 import { lstat, mkdir } from 'fs/promises';
 import { resolve } from 'path';
 import { URL, fileURLToPath } from 'url';
+import { beforeAll, expect, test } from '@jest/globals';
 import { LinkInfo, Options, isSymlinkAvailable, mklnks } from '#main';
 
 const baseDir = fileURLToPath(new URL('.tmp', import.meta.url));
