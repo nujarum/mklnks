@@ -1,12 +1,12 @@
-import type { RmOptions } from 'fs';
-import type { WorkerOptions } from 'worker_threads';
+import type { RmOptions } from 'node:fs';
+import type { WorkerOptions } from 'node:worker_threads';
 
-import { once } from 'events';
-import { rm, symlink } from 'fs/promises';
-import { cpus, tmpdir } from 'os';
-import { join, resolve } from 'path';
-import { fileURLToPath } from 'url';
-import { Worker } from 'worker_threads';
+import { once } from 'node:events';
+import { rm, symlink } from 'node:fs/promises';
+import { cpus, tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { Worker } from 'node:worker_threads';
 import { importMetaResolve } from 'resolve-esm';
 import chalk from 'chalk';
 const { gray } = chalk;
