@@ -1,11 +1,11 @@
-import type { MakeDirectoryOptions, RmOptions, Stats } from 'fs';
+import type { MakeDirectoryOptions, RmOptions, Stats } from 'node:fs';
 import { LinkInfoInit, LinkType, WorkerData } from '#main';
 
-import { appendFile, link as hardlink, lstat, mkdir, rm, stat, symlink, unlink } from 'fs/promises';
-import { createRequire } from 'module';
-import { dirname, relative, resolve, sep } from 'path';
-import { fileURLToPath, pathToFileURL } from 'url';
-import { parentPort, workerData } from 'worker_threads';
+import { appendFile, link as hardlink, lstat, mkdir, rm, stat, symlink, unlink } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { dirname, relative, resolve, sep } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { parentPort, workerData } from 'node:worker_threads';
 import chalk from 'chalk';
 
 const { blue, cyan, gray, green, magenta, white, yellow } = chalk;

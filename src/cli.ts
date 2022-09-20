@@ -1,8 +1,8 @@
 import type { ParsedArgs } from 'minimist';
 import type { Options } from '#main';
 
-import { createRequire } from 'module';
-import { resolve } from 'path';
+import { createRequire } from 'node:module';
+import { resolve } from 'node:path';
 import chalk from 'chalk';
 import minimist from 'minimist';
 import { isSymlinkAvailable, mklnks } from '#main';

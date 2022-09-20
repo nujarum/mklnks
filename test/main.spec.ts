@@ -1,10 +1,10 @@
 /* eslint-disable
     @typescript-eslint/no-floating-promises,
  */
-import type { MakeDirectoryOptions } from 'fs';
-import { lstat, mkdir } from 'fs/promises';
-import { resolve } from 'path';
-import { URL, fileURLToPath } from 'url';
+import type { MakeDirectoryOptions } from 'node:fs';
+import { lstat, mkdir } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { URL, fileURLToPath } from 'node:url';
 import { beforeAll, expect, test } from '@jest/globals';
 import { LinkInfo, Options, isSymlinkAvailable, mklnks } from '#main';
 
