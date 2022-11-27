@@ -23,7 +23,7 @@ interface LinkInfo {
 interface Options {
     /**
      * Base path for resolving paths.
-     * @defaultValue `"."` (== [`process.cwd()`](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#processcwd))
+     * @defaultValue `"."` (== [`process.cwd()`](https://nodejs.org/docs/latest-v18.x/api/process.html#processcwd))
      */
     baseDir?: string;
     /**
@@ -39,8 +39,8 @@ interface Options {
      *
      * Supported target formats:
      * * absolute/relative path
-     * * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#importmetaresolvespecifier-parent))
-     * * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#requireresolverequest-options))
+     * * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/docs/latest-v18.x/api/esm.html#importmetaresolvespecifier-parent))
+     * * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/docs/latest-v18.x/api/modules.html#requireresolverequest-options))
      */
     entries: Record</* link */ string, /* target */ string>;
     /**

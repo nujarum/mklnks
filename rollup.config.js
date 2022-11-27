@@ -1,6 +1,6 @@
 import { builtinModules } from 'node:module';
 import nodeResolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import typescript from 'rollup-plugin-ts';
 
 const external = Object.freeze([
@@ -12,6 +12,15 @@ const outputDeclaration = Object.freeze({
     declaration: true,
     declarationDir: './types',
     declarationMap: true,
+});
+const rollupOutput = Object.freeze({
+    format: 'es',
+    generatedCode: Object.freeze({
+        constBindings: true,
+        objectShorthand: true,
+        symbols: true,
+    }),
+    sourcemap: true,
 });
 const terserOptions = Object.freeze({
     compress: false,
@@ -25,9 +34,7 @@ export default [
         external,
         output: {
             file: 'dist/main.js',
-            format: 'es',
-            preferConst: true,
-            sourcemap: true,
+            ...rollupOutput,
         },
         plugins: [
             nodeResolve(),
@@ -45,9 +52,7 @@ export default [
         external,
         output: {
             file: 'dist/worker.js',
-            format: 'es',
-            preferConst: true,
-            sourcemap: true,
+            ...rollupOutput,
         },
         plugins: [
             nodeResolve(),
@@ -61,9 +66,7 @@ export default [
         output: {
             banner: '#!/usr/bin/env node',
             file: 'bin/cli.js',
-            format: 'es',
-            preferConst: true,
-            sourcemap: true,
+            ...rollupOutput,
         },
         plugins: [
             nodeResolve(),

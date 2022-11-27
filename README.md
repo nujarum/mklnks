@@ -41,7 +41,7 @@ function mklnks(options: Options): Promise<LinkInfo[]>;
 ### `baseDir`
 Base path for resolving paths.
 * Type: `string`
-* Default: `'.'` (== [`process.cwd()`](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#processcwd))
+* Default: `'.'` (== [`process.cwd()`](https://nodejs.org/docs/latest-v18.x/api/process.html#processcwd))
 
 ### `dryRun`
 Run trial execution without actual link creation.
@@ -55,8 +55,8 @@ An object mapping link path to target path.
     * absolute/relative path
 * Supported target formats:
     * absolute/relative path
-    * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#importmetaresolvespecifier-parent))
-    * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#requireresolverequest-options))
+    * `import:<id>` (resolve by [`import.meta.resolve`](https://nodejs.org/docs/latest-v18.x/api/esm.html#importmetaresolvespecifier-parent))
+    * `require:<id>` (resolve by [`require.resolve`](https://nodejs.org/docs/latest-v18.x/api/modules.html#requireresolverequest-options))
 
 ### `force`
 Force to remove existing files/directories in the link path.
@@ -68,7 +68,7 @@ Create links with junctions/hard-links instead of symlinks.
 * Type: `boolean`
 * Default: `false`
 
-> **Note:**<br/>
+> **Note** :<br/>
 > This option is only available on Windows and ignored on other platforms.<br/>
 > On Windows, `mklnks` will automatically fallback to junctions/hard-links if the environment has no permission to create symlinks[^1].<br/>
 > Set this option to `true` only if you want to avoid symlinks explicitly.
