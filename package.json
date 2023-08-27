@@ -7,57 +7,58 @@
     "url": "https://github.com/nujarum"
   },
   "bin": {
-    "mklnks": "./bin/cli.js"
+    "mklnks": "./bin/cli.mjs"
   },
   "bugs": {
     "url": "https://github.com/nujarum/mklnks/issues"
   },
   "dependencies": {
-    "chalk": "~5.1.2",
-    "minimist": "~1.2.7",
-    "resolve-esm": "~1.4.0"
+    "chalk": "~5.3.0",
+    "minimist": "~1.2.8"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.1.0",
-    "@types/jest": "^29.2.3",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-terser": "^0.4.3",
     "@types/minimist": "^1.2.2",
-    "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "concurrently": "^7.6.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.28.0",
-    "eslint-plugin-unicorn": "^45.0.0",
-    "husky": "^8.0.2",
-    "jest": "^29.3.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^3.5.0",
-    "rollup-plugin-ts": "^3.0.2",
-    "ts-jest": "^29.0.3",
-    "typescript": "^4.9.3"
+    "@types/node": "^20.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitest/coverage-v8": "^0.34.3",
+    "concurrently": "^8.2.1",
+    "eslint": "^8.48.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "husky": "^8.0.3",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.28.1",
+    "rollup-plugin-ts": "^3.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.3"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "exports": {
     ".": {
-      "types": "./types/main.d.ts",
-      "import": "./dist/main.js"
+      "types": "./types/main.d.mts",
+      "default": "./dist/main.mjs"
     },
     "./package.json": "./package.json"
   },
   "files": [
     "bin",
     "dist",
-    "types/**/*.d.ts"
+    "types/**/*.d.mts"
   ],
   "homepage": "https://github.com/nujarum/mklnks#readme",
   "imports": {
     "#@": "./package.json",
-    "#*": "./dist/*.js"
+    "#*": {
+      "types": "./types/*.d.mts",
+      "default": "./dist/*.mjs"
+    }
   },
   "keywords": [
     "cli",
@@ -78,8 +79,8 @@
     "symlink"
   ],
   "license": "MIT",
-  "main": "./dist/main.js",
-  "module": "./dist/main.js",
+  "main": "./dist/main.mjs",
+  "module": "./dist/main.mjs",
   "publishConfig": {
     "access": "public"
   },
@@ -87,10 +88,13 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rimraf .cache bin dist test/.tmp types",
-    "jest": "cross-env \"NODE_OPTIONS='--experimental-vm-modules --no-warnings'\" jest",
     "lint": "eslint . --cache --cache-file .cache/.eslintcache",
-    "test": "concurrently npm:jest npm:lint"
+    "test": "concurrently -c auto npm:lint npm:vitest",
+    "vitest": "vitest run --coverage --dir ./test"
   },
   "type": "module",
-  "types": "./types/main.d.ts"
+  "types": "./types/main.d.mts",
+  "volta": {
+    "node": "18.17.1"
+  }
 }
