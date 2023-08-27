@@ -1,3 +1,6 @@
+/* eslint-disable
+    @typescript-eslint/prefer-nullish-coalescing,
+ */
 import type { MakeDirectoryOptions, RmOptions, Stats } from 'node:fs';
 import { LinkInfoInit, LinkType, WorkerData } from '#main';
 
@@ -9,7 +12,7 @@ import { parentPort, workerData } from 'node:worker_threads';
 import chalk from 'chalk';
 
 const { blue, cyan, gray, green, magenta, white, yellow } = chalk;
-const { dryRun, force, preferSymlink, quiet, silent } = { ...workerData } as WorkerData;
+const { dryRun, force, preferSymlink, quiet, silent } = workerData as WorkerData;
 
 const STR_PREFIX = green(dryRun ? '? ' : '+ ');
 const STR_ARROW = gray(' » ');

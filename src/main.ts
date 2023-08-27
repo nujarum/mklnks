@@ -1,18 +1,21 @@
+/* eslint-disable
+    @typescript-eslint/prefer-literal-enum-member,
+    @typescript-eslint/no-unsafe-declaration-merging,
+ */
 import type { RmOptions } from 'node:fs';
 import type { WorkerOptions } from 'node:worker_threads';
 
 import { once } from 'node:events';
+import { createRequire } from 'node:module';
 import { rm, symlink } from 'node:fs/promises';
 import { cpus, tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { Worker } from 'node:worker_threads';
-import { importMetaResolve } from 'resolve-esm';
 import chalk from 'chalk';
-const { gray } = chalk;
 
-const getWorkerUrl = importMetaResolve('#worker'); // import.meta.resolve('#worker');
+const { gray } = chalk;
 const isWindows = process.platform === 'win32';
+const require = createRequire(import.meta.url);
 const symlinkAvailable = availableSymlink();
 
 const cpuCount = cpus().length;
@@ -20,7 +23,7 @@ const execArgv = Object.freeze([
     '--experimental-import-meta-resolve',
     '--no-warnings',
 ]);
-const workerPath = fileURLToPath(await getWorkerUrl);
+const workerPath = require.resolve('#worker');
 
 /** @internal */
 export interface LinkInfoInit {
