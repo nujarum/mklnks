@@ -5,7 +5,7 @@ import type { MakeDirectoryOptions } from 'node:fs';
 import { lstat, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { URL, fileURLToPath } from 'node:url';
-import { beforeAll, expect, test } from '@jest/globals';
+import { beforeAll, expect, test } from 'vitest';
 import { LinkInfo, Options, isSymlinkAvailable, mklnks } from '#main';
 
 const baseDir = fileURLToPath(new URL('.tmp', import.meta.url));
