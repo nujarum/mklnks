@@ -3,9 +3,10 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from 'rollup-plugin-ts';
 
-const external = Object.freeze([
+export const external = Object.freeze([
     ...builtinModules,
     /([/\\])node_modules\1/,
+    /^@.+\//,
     /^#.+/,
 ]);
 const outputDeclaration = Object.freeze({
@@ -33,7 +34,7 @@ export default [
         input: 'src/main.ts',
         external,
         output: {
-            file: 'dist/main.js',
+            file: 'dist/main.mjs',
             ...rollupOutput,
         },
         plugins: [
@@ -51,7 +52,7 @@ export default [
         input: 'src/worker.ts',
         external,
         output: {
-            file: 'dist/worker.js',
+            file: 'dist/worker.mjs',
             ...rollupOutput,
         },
         plugins: [
@@ -65,7 +66,7 @@ export default [
         external,
         output: {
             banner: '#!/usr/bin/env node',
-            file: 'bin/cli.js',
+            file: 'bin/cli.mjs',
             ...rollupOutput,
         },
         plugins: [
