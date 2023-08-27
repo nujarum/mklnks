@@ -1,3 +1,6 @@
+/* eslint-disable
+    @typescript-eslint/no-confusing-void-expression,
+ */
 import type { ParsedArgs } from 'minimist';
 import type { Options } from '#main';
 
