@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
+    "allowJs": true,
     "baseUrl": ".",
     // "declaration": true,
     // "declarationDir": "./types",
@@ -8,7 +9,7 @@
     "lib": [
       "ESNext"
     ],
-    // "outDir": "./dist",
+    "outDir": "./dist",
     "paths": {
       "#@": ["./package.json"],
       "#*": ["./src/*.ts"],
